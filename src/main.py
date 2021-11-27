@@ -17,7 +17,7 @@ def _parse_args():
     return args
 
 
-def processFile(in_file: str):
+def processFile(in_file: str, out_file: str = "../outfile.txt", save_to_file: bool = True):
 
     account_list = []
     trans_list = []
@@ -32,21 +32,25 @@ def processFile(in_file: str):
         lines = f.readlines()
     f.close()
 
-    outfile_name = "authorizer_output.txt"
-    out_file = open(outfile_name, "w")
+    out = []
 
-    count = 0
     for line in lines:
         line_json = json.loads(line)
         accounts, violations = process.processLine(line_json)
-
         out_line = getOutputLine(accounts, violations)
-        json.dump(out_line, out_file)
-        out_file.write("\n")
+        out.append(out_line) 
 
-    print(f"Saved to {outfile_name}!")
-    out_file.close()
+    if save_to_file:
+        output_file = open(out_file, "w")
 
+        for l in out:
+            json.dump(out_line, output_file)
+            output_file.write("\n")
+
+        print(f"Saved to {out_file}!")
+        output_file.close()
+
+    return out
 
 def main():
 
@@ -58,8 +62,7 @@ def main():
         print("File path not valid.")
 
     else:
-        processFile(args.filepath)
-
+        _ = processFile(args.filepath)
 
 if __name__ == "__main__":
     main()

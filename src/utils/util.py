@@ -31,3 +31,4 @@ def getOutputLine(account, violations):
     out["violations"] = violations
 
     return out
+    
