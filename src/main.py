@@ -44,7 +44,7 @@ def processFile(in_file: str, out_file: str = "../outfile.txt", save_to_file: bo
         output_file = open(out_file, "w")
 
         for l in out:
-            json.dump(out_line, output_file)
+            json.dump(l, output_file)
             output_file.write("\n")
 
         print(f"Saved to {out_file}!")

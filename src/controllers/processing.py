@@ -19,7 +19,7 @@ class Processing:
                 self.account_proc.addAccount(account)
 
             else:
-                self.add_violations(Constant.ACCOUNT_NOT_INITIALIZED)
+                violations.append(Constant.ACCOUNT_NOT_INITIALIZED)
 
             return account, violations
 
