@@ -1,4 +1,5 @@
-from authorizer import *
+import pytest
+from .main import *
 from utils.util import *
 from utils.constant import *
 
