@@ -1,2 +1,2 @@
 # nubank-authorizer
-Nubank  Authorizer Challenge
+Nubank  Authorizer
