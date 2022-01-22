@@ -1,10 +1,3 @@
-"""
-Define model for account.
-JSON object example:
-{ "account": { "activeCard": true, "availableLimit": 100 } }
-"""
-
-
 class Account:
     def __init__(self, activeCard, availableLimit):
         self.activeCard = activeCard

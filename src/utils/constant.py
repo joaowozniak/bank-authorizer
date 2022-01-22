@@ -1,8 +1,3 @@
-"""
-Define constants as variables.
-"""
-
-
 class Constant:
 
     ACCOUNT: str = "account"
@@ -14,4 +9,3 @@ class Constant:
     INSUFFICIENT_LIMIT: str = "insufficient-limit"
     HIGH_FREQUENCY_SMALL_INTERVAL: str = "high-frequency-small-interval"
     DOUBLED_TRANSACTION: str = "doubled-transaction"
-    

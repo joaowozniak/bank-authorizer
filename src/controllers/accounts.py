@@ -17,8 +17,6 @@ class AccountProcess:
         except:
             raise ValueError(f"Account {idx} not found")
 
-        return None
-
     def isNewAccount(self):
         return self.getAccountListSize() == 0
 

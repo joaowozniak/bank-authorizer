@@ -1,7 +1,5 @@
-import argparse, sys, os, json
-from utils.constant import Constant
+import argparse, os, json
 from utils.util import getOutputLine
-from models.account import Account
 from controllers.processing import Processing
 from controllers.accounts import AccountProcess
 from controllers.transactions import TransactionProcess
@@ -17,7 +15,9 @@ def _parse_args():
     return args
 
 
-def processFile(in_file: str, out_file: str = "../outfile.txt", save_to_file: bool = True):
+def processFile(
+    in_file: str, out_file: str = "../outfile.txt", save_to_file: bool = True
+):
 
     account_list = []
     trans_list = []
@@ -38,7 +38,7 @@ def processFile(in_file: str, out_file: str = "../outfile.txt", save_to_file: bo
         line_json = json.loads(line)
         accounts, violations = process.processLine(line_json)
         out_line = getOutputLine(accounts, violations)
-        out.append(out_line) 
+        out.append(out_line)
 
     if save_to_file:
         output_file = open(out_file, "w")
@@ -52,6 +52,7 @@ def processFile(in_file: str, out_file: str = "../outfile.txt", save_to_file: bo
 
     return out
 
+
 def main():
 
     print("Starting up ...")
@@ -63,6 +64,7 @@ def main():
 
     else:
         _ = processFile(args.filepath)
+
 
 if __name__ == "__main__":
     main()

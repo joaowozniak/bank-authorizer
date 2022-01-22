@@ -1,7 +1,3 @@
-"""
-Define util functions.
-"""
-import json
 from models.account import Account
 from models.transaction import Transaction
 
@@ -31,4 +27,3 @@ def getOutputLine(account, violations):
     out["violations"] = violations
 
     return out
-    
