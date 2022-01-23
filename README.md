@@ -15,6 +15,7 @@ Assuming all monetary values are positive integers using a currency without cent
 #### 1. Account creation
 
 _Input:_ Creates the account with the attributes available-limit and active-card.
+
 _Output:_ The created account's current state with all business logic violations. If in the operation processing does not happen any violation, the field violations returns an empty vector [].
 
 _Business rules:_ Once created, the account can't be updated or recreated. If the application receives another operation of account creation, it returns the following violation: account-already-initialized.
@@ -22,6 +23,7 @@ _Business rules:_ Once created, the account can't be updated or recreated. If th
 #### 2. Transaction authorization in the account
 
 _Input:_ Tries to authorize a transaction for a particular merchant, amount and time given the created account's state and last authorized transactions.
+
 _Output:_ The account's current state with any business logic violations. If in the operation processing does not happen any violation, the field violations returns an empty vector [].
 
 _Business rules:_
