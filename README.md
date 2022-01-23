@@ -3,6 +3,7 @@
 ## Introduction
 
 Bank Account and Transaction Authorizer: An application that authorizes transactions for a specific account following a set of predefined rules.
+This project's requirements were provided by the Nubank programming challenge.
 
 ## Description
 
